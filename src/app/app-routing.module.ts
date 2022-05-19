@@ -8,7 +8,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('./lending/lending.module').then(
         (m) => m.LendingModule)
-  }
+  },
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }
 ]
 @NgModule({
   imports: [
