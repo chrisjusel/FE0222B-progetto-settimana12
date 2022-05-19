@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -11,7 +14,9 @@ import { MoviesComponent } from './movies.component';
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    MatToolbarModule,
+    MatIconModule
   ]
 })
 export class MoviesModule { }

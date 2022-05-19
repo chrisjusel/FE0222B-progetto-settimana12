@@ -17,8 +17,14 @@ export class AuthService {
   user$ = this.authSubject.asObservable();
   isLoggedIn$ = this.user$.pipe(map(user => !!user));
 
+  jwtHelper = new JwtHelperService();
 
-  constructor(private http: HttpClient, private router: Router){}
+  autologoutTimer: any;
+
+
+  constructor(private http: HttpClient, private router: Router){
+    this.restoreUser();
+  }
 
   login(data: {email: string; password: string}){
     return this.http.post<AuthData>(`${this.URL}/login`, data).pipe(
@@ -32,6 +38,34 @@ export class AuthService {
     ),
     catchError(this.errors)
     );
+  }
+
+  logout(){
+    this.authSubject.next(null);
+    this.router.navigate(['/']);
+    localStorage.removeItem('user');
+    if(this.autologoutTimer){
+      clearTimeout(this.autologoutTimer);
+    }
+  }
+
+  autoLogout(expirationDate: Date){
+    const expirationMilliseconds = expirationDate.getTime() - new Date().getTime();
+    this.autologoutTimer = setTimeout(() => {
+      this.logout();
+    }, expirationMilliseconds);
+  }
+
+  restoreUser(){
+    const loggedUserData = localStorage.getItem('user');
+    if(!loggedUserData) return;
+    const user: AuthData = JSON.parse(loggedUserData);
+    if(this.jwtHelper.isTokenExpired(user.accessToken)){
+      return
+    }
+    this.authSubject.next(user)
+    const expirationDate = this.jwtHelper.getTokenExpirationDate(user.accessToken) as Date
+    this.autoLogout(expirationDate);
   }
 
 
