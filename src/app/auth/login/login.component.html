@@ -1,3 +1,25 @@
 <div class="bg">
-  <div class="login-cart">ciao</div>
+  <div class="card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form #form="ngForm" (ngSubmit)="onsubmit(form)">
+          <mat-form-field appearance="fill" class="d-block">
+            <mat-label>Email*</mat-label>
+            <input matInput type="email" id="email" name="email" class="form-control" ngModel>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="d-block">
+            <mat-label>Password*</mat-label>
+            <input matInput type="password" id="password" name="password" class="form-control" ngModel>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-button mat-raised-button color="accent" type="submit">Accedi</button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <p class="registrati">Oppure <a [routerLink]="['/signup']" routerLinkActive="active">Registrati</a></p>
+  </div>
 </div>
