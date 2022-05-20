@@ -1,9 +1,7 @@
 <div class="bg">
   <div class="card">
     <mat-card>
-      <mat-card-header>
-        <mat-card-title>Registrazione</mat-card-title>
-      </mat-card-header>
+      <img src="../../../assets/img/Logonetflix.png" alt="">
       <mat-card-content>
         <form #form="ngForm" (ngSubmit)="onsubmit(form)">
           <mat-form-field appearance="fill" class="d-block">
@@ -24,6 +22,10 @@
         </form>
       </mat-card-content>
     </mat-card>
-    <p class="registrati">Oppure se hai già un account <a [routerLink]="['/']" routerLinkActive="active">Accedi</a></p>
+    <p class="registrati">Oppure se hai già un account <a [routerLink]="['/']" routerLinkActive="active">Accedi</a><br>
+      <span class="signature">Powered by
+        <span class="myName">Christian Vitale</span>
+      </span>
+      </p>
   </div>
 </div>

@@ -4,39 +4,81 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #212121;
   display: flex;
   align-items: center;
+  background-image: url("../../../assets/img/bglogin.jpg");
 }
 
 .card{
   margin: 0 auto;
-  background-color: #212121;
+  background-color: rgb(0, 0, 0, 0.8);
   color: white;
   border: none;
+  text-align: center;
+  padding: 30px;
+
 }
 
 .registrati{
   margin: 0 auto;
+  margin-top: 10px;
 }
-
 .registrati a{
   color: white;
+
   &:hover{
     color: #a7a7a7;
   }
 }
 
 form{
-  width: 70%;
+  margin: 0 auto;
+}
+
+input{
+  margin-top: 0px;
+  line-height: 1.5;
+  border-bottom: 2px solid #e50914  !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
 }
 
 mat-card{
-  background-color: #424242 !important;
+  background-color: rgba(66, 66, 66, 1) !important;
   color: white;
-  width: 300px;
+  width: 400px;
+  height: 500px;
+  padding: 50px;
 }
 
 mat-label{
   color: white;
+}
+
+mat-card-title{
+  text-align: center !important;
+}
+
+mat-card-actions{
+  margin-top: 4em;
+}
+
+button{
+  width: 50%;
+  height: 2.6em;
+  font-size: 1.3em;
+  background-color: #e50914 !important;
+}
+
+img{
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.signature{
+  font-size: 0.8em;
+  color: #c5c5c580;
 }

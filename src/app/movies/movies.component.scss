@@ -1,7 +1,6 @@
 .main{
   width: 100%;
   height: 100%;
-  background-color: #303030;
   padding: 30px;
 }
 
@@ -16,4 +15,9 @@ mat-icon{
 
 .liked{
   color: red;
+}
+
+.spinner-border{
+  color: white !important;
+  margin-top: 40vh;
 }

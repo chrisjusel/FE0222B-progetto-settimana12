@@ -1,14 +1,12 @@
 <div class="bg">
   <div class="card">
     <mat-card>
-      <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-      </mat-card-header>
+      <img src="../../../assets/img/Logonetflix.png" alt="">
       <mat-card-content>
         <form #form="ngForm" (ngSubmit)="onsubmit(form)">
           <mat-form-field appearance="fill" class="d-block">
             <mat-label>Email*</mat-label>
-            <input matInput type="email" id="email" name="email" class="form-control" ngModel>
+            <input matInput appareance type="email" id="email" name="email" class="form-control" ngModel>
           </mat-form-field>
           <mat-form-field appearance="fill" class="d-block">
             <mat-label>Password*</mat-label>
@@ -20,6 +18,10 @@
         </form>
       </mat-card-content>
     </mat-card>
-    <p class="registrati">Oppure <a [routerLink]="['/signup']" routerLinkActive="active">Registrati</a></p>
+    <p class="registrati">Oppure <a [routerLink]="['/signup']" routerLinkActive="active">Registrati</a><br>
+      <span class="signature">Powered by
+        <span class="myName">Christian Vitale</span>
+      </span>
+      </p>
   </div>
 </div>
