@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatIcon, MatIconModule} from '@angular/material/icon';
 
 
 
@@ -15,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     CommonModule,
     MoviesRoutingModule,
-    MatToolbarModule,
+    MatCardModule,
     MatIconModule
   ]
 })

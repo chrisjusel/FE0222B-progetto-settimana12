@@ -1,1 +1,24 @@
-<div class="main"></div>
+<div class="main">
+  <div class="row" *ngIf="movies && favorites; else loading">
+    <div class="col-3 mb-3" *ngFor="let movie of movies; let i = index">
+      <mat-card>
+        <mat-card-content class="card-content">
+          <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}">
+        </mat-card-content>
+        <mat-card-footer>
+          <mat-icon [ngClass]="checkIfLiked(movie.id) == true ? 'liked' : ''" aria-hidden="false" (click) = onlike(movie.id)>
+            favorite
+          </mat-icon>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #loading>
+  <div class="container d-flex justify-content-center">
+    <div class="spinner-border" role="status"></div>
+  </div>
+</ng-template>

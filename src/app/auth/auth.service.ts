@@ -72,6 +72,19 @@ export class AuthService {
     return this.http.post(`${this.URL}/register`, data).pipe(catchError(this.errors));
   }
 
+  getUserInfo(){
+    let temp;
+    this.user$.subscribe(user => temp = user?.user);
+    return temp;
+  }
+
+  getUserId(){
+    let loggedUser = this.getUserInfo();
+    if(loggedUser != undefined){
+      return loggedUser['id'];
+    }
+    return 0;
+  }
 
   private errors(err: any) {
     // console.error(err)

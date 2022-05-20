@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   }
 
   async onsubmit(form: any){
-    console.log(form.value);
     await this.authSrv.login(form.value).toPromise();
     this.router.navigate(['/']);
     form.reset()

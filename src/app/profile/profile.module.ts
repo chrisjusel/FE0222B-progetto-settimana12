@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    MatSidenavModule
+    MatCardModule
   ]
 })
 export class ProfileModule { }
