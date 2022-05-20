@@ -1,0 +1,42 @@
+.bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+}
+
+.card{
+  margin: 0 auto;
+  background-color: #212121;
+  color: white;
+  border: none;
+}
+
+.registrati{
+  margin: 0 auto;
+}
+
+.registrati a{
+  color: white;
+  &:hover{
+    color: #a7a7a7;
+  }
+}
+
+form{
+  width: 70%;
+}
+
+mat-card{
+  background-color: #424242 !important;
+  color: white;
+  width: 300px;
+}
+
+mat-label{
+  color: white;
+}

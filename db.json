@@ -5,6 +5,12 @@
       "password": "$2a$10$SmgrR2x18eeoJMFtk9N9FORmSTDG0ToOtqOS0Ik0jgiRWoAqe7sT2",
       "name": "nicola toledo",
       "id": 1
+    },
+    {
+      "email": "christianvit@hotmail.it",
+      "password": "$2a$10$8y7p5ANmwwlF0MfzFQLX0ud/d2tIsQcVyUxiqIlMi0ErTX77DaeMW",
+      "name": "Christian",
+      "id": 2
     }
   ],
   "favorites": [

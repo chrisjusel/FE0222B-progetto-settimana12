@@ -68,6 +68,10 @@ export class AuthService {
     this.autoLogout(expirationDate);
   }
 
+  signUp(data: SignupData){
+    return this.http.post(`${this.URL}/register`, data).pipe(catchError(this.errors));
+  }
+
 
   private errors(err: any) {
     // console.error(err)

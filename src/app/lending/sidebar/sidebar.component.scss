@@ -4,14 +4,26 @@
 
 .sidenav {
   width: 200px;
+  background-color: #424242;
 }
 
-.sidenav .mat-toolbar {
+.sidenav .mat-toolbar{
   background: inherit;
+  color: white;
+}
+
+.mat-nav-list a{
+  color: white;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
+  background-color: #b9180b;
+}
+
+.logoutButton{
+  position: fixed;
+  bottom: 15px;
 }
