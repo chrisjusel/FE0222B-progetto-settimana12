@@ -11,7 +11,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="d-flex justify-content-between">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -23,6 +23,7 @@
       <span>
         Movies
       </span>
+      <span>Ciao, {{getUserName()}}</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

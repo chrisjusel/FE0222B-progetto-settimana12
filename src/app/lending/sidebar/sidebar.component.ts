@@ -25,4 +25,11 @@ export class SidebarComponent {
     this.router.navigate(['/login']);
   }
 
+  getUserName(){
+    let loggedUser = this.authSrv.getUserInfo();
+    if(loggedUser != undefined){
+      return loggedUser['name'];
+    }
+    return;
+  }
 }

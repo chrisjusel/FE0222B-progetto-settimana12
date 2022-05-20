@@ -50,17 +50,14 @@ export class MoviesComponent implements OnInit {
     let temp: Favorite = {
       movieId: movieID,
       userId: userID,
+      id: 0
     }
 
     await this.moviesSrv.like(temp).toPromise();
+    this.fetchFavorites();
   }
 
-/*   async ondislike(movieID: number){
-    let userID = this.authSrv.getUserId();
-    let temp: Favorite = {
-      movieId: movieID,
-      userId: userID
-    }
-    await this.moviesSrv.dislike(this.getFavoriteIdByData(movieID)).toPromise();
+/*   async ondislike(favId: number){
+    await this.moviesSrv.dislike().toPromise();
   } */
 }
