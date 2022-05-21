@@ -34,6 +34,12 @@ export class MoviesService {
     }))
   }
 
+  getMovieById(movieId: number){
+    return this.http.get<MoviesData>(`${this.URL}/movies-popular/${movieId}`).pipe(catchError(err => {
+      return throwError(this.errorMessage(err.status))
+    }))
+  }
+
   errorMessage(status: number){
     let msg = '';
     switch(status){

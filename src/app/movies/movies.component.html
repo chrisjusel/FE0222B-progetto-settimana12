@@ -3,7 +3,7 @@
     <div class="col-3 mb-3" *ngFor="let movie of movies; let i = index">
       <mat-card>
         <mat-card-content class="card-content">
-          <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}">
+          <img routerLink="{{movie.id}}" routerLinkActive="active" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}">
         </mat-card-content>
         <mat-card-footer>
           <mat-icon [ngClass]="checkIfLiked(movie.id) == true ? 'liked' : ''" aria-hidden="false" (click) =
