@@ -34,6 +34,8 @@ export class AuthService {
       tap((data) => {
         this.authSubject.next(data);
         localStorage.setItem('user', JSON.stringify(data));
+        const expirationDate = this.jwtHelper.getTokenExpirationDate(data.accessToken) as Date
+        this.autoLogout(expirationDate)
       }
     ),
     catchError(this.errors)
@@ -42,7 +44,7 @@ export class AuthService {
 
   logout(){
     this.authSubject.next(null);
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     localStorage.removeItem('user');
     if(this.autologoutTimer){
       clearTimeout(this.autologoutTimer);
