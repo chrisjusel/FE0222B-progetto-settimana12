@@ -5,14 +5,12 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 
 
 @NgModule({
   declarations: [
-    MoviesComponent,
-    MovieDetailComponent
+    MoviesComponent
   ],
   imports: [
     CommonModule,
