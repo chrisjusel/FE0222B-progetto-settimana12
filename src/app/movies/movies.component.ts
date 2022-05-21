@@ -13,6 +13,7 @@ export class MoviesComponent implements OnInit {
 
   movies!: MoviesData[];
   favorites!: Favorite[];
+  loadingLike!: false;
 
   constructor(private moviesSrv: MoviesService, private authSrv: AuthService) { }
 
@@ -57,7 +58,23 @@ export class MoviesComponent implements OnInit {
     this.fetchFavorites();
   }
 
-/*   async ondislike(favId: number){
-    await this.moviesSrv.dislike().toPromise();
-  } */
+  async ondislike(movieId: number){
+    let favId = this.getFavoriteIdByMovie(movieId);
+    this.moviesSrv.dislike(favId).subscribe(() => {
+      for(let i=0; i<this.favorites.length; i++){
+        if(this.favorites[i].movieId == movieId){
+          this.favorites.splice(i, 1);
+        }
+      }
+    });
+  }
+
+  getFavoriteIdByMovie(movieId: number){
+    for(let i=0; i<this.favorites.length; i++){
+      if(this.favorites[i].movieId == movieId){
+        return this.favorites[i].id
+      }
+    }
+    return -1
+  }
 }
