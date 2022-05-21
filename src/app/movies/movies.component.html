@@ -6,7 +6,8 @@
           <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}">
         </mat-card-content>
         <mat-card-footer>
-          <mat-icon [ngClass]="checkIfLiked(movie.id) == true ? 'liked' : ''" aria-hidden="false" (click) = onlike(movie.id)>
+          <mat-icon [ngClass]="checkIfLiked(movie.id) == true ? 'liked' : ''" aria-hidden="false" (click) =
+          "checkIfLiked(movie.id) == false ? onlike(movie.id) : ondislike(movie.id)">
             favorite
           </mat-icon>
         </mat-card-footer>

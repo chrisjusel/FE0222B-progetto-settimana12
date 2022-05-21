@@ -8,7 +8,6 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   errorMessage = undefined;
-  successMessage: string | undefined = undefined;
 
   constructor(private authSrv: AuthService, private router: Router) { }
 
@@ -16,11 +15,14 @@ export class LoginComponent implements OnInit {
   }
 
   async onsubmit(form: any){
+    try{
     await this.authSrv.login(form.value).toPromise();
     this.router.navigate(['/']);
     form.reset()
     this.errorMessage = undefined;
-    this.successMessage = "Login effettuato con successo";
-    console.log(this.successMessage);
+    } catch (error: any) {
+      this.errorMessage = error;
+      console.error(error);
+    }
   }
 }

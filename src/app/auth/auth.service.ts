@@ -87,19 +87,18 @@ export class AuthService {
   }
 
   private errors(err: any) {
-    // console.error(err)
     switch (err.error) {
       case "Email and password are required":
         return throwError("Email e password sono obbligatorie");
         break;
       case "Email already exists":
-        return throwError("Utente gia registrato");
+        return throwError("Esiste già un utente con questa mail");
         break;
       case "Email format is invalid":
-        return throwError("Email scritta male");
+        return throwError("La mail inserita non è valida");
         break;
       case "Cannot find user":
-        return throwError("Utente non esiste");
+        return throwError("Non esiste alcun utente registrato con questa email");
         break;
 
       default:

@@ -1,5 +1,8 @@
 <div class="bg">
   <div class="card">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
     <mat-card>
       <img src="../../../assets/img/Logonetflix.png" alt="">
       <mat-card-content>
