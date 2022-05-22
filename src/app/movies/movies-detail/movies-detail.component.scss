@@ -1,0 +1,59 @@
+mat-card{
+  margin: 30px;
+  padding: 3%;
+}
+
+mat-card-title{
+  font-weight: bold;
+  font-size:3em !important;
+  border-bottom: 4px solid #e50914;
+  padding: 10px;
+}
+
+img{
+  width: 400px;
+  border: 2px solid #e50914;
+  padding: 10px;
+}
+
+.infos{
+  font-size: 1.5em;
+  padding: 1.5em;
+  width: 60%;
+}
+
+.rating{
+  font-size: 2em;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 6em;
+}
+
+.rating p{
+  margin-right: 1.5em;
+}
+
+.rating span{
+  font-weight: bold;
+}
+
+.plot{
+  font-style: italic;
+  margin-top: 1.5em;
+  border-left: 4px solid #e50914;
+  padding-left: 10px;
+}
+
+.date{
+  font-weight: bold;
+}
+
+mat-icon{
+  font-size: 0.8em;
+  color: rgb(252, 193, 2);
+}
+
+.spinner-border{
+  color: white !important;
+  margin-top: 40vh;
+}

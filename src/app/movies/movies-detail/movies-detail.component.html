@@ -1,0 +1,25 @@
+<mat-card *ngIf="movie; else loading">
+  <mat-card-header>
+    <mat-card-title>
+      {{movie.title}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="d-flex justify-content-between">
+    <div class="infos">
+      <p><span class="date">Data di uscita:</span> {{movie.release_date}}</p>
+      <p class="plot">{{movie.overview}}</p>
+      <div class="rating">
+        <p class="popularity d-inline-block"><span>Popolarità: </span>{{movie.popularity}} <mat-icon>group</mat-icon></p>
+        <p class="vote_count d-inline-block"><span>Recensioni: </span>{{movie.vote_count}} <mat-icon>border_color</mat-icon></p>
+        <p class="vote_avg d-inline-block"><span>Voto medio: </span>{{movie.vote_average}} <mat-icon>star</mat-icon></p>
+      </div>
+    </div>
+    <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{movie.poster_path}}">
+  </mat-card-content>
+</mat-card>
+
+<ng-template #loading class="loading">
+  <div class="container d-flex justify-content-center">
+    <div class="spinner-border" role="status"></div>
+  </div>
+</ng-template>

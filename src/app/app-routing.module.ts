@@ -8,7 +8,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./lending/lending.module').then(
-        (m) => m.LendingModule)
+        (m) => m.LendingModule),
   }
 ]
 @NgModule({
